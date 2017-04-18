@@ -1,0 +1,33 @@
+Plugin\ProductProfile\Entity\ProductProfile:
+    type: entity
+    table: plg_product_profile
+    repositoryClass: Plugin\ProductProfile\Repository\ProductProfileRepository
+    id:
+        id:
+            type: integer
+            nullable: false
+            id: true
+            column: product_profile_id
+            generator:
+                strategy: AUTO
+            options:
+                unsigned: true
+    fields:
+        headline:
+            type: string
+            nullable: true
+            length: 50
+        product_id:
+            type: integer
+            nullable: false
+            unsigned: false
+    manyToOne:
+        Product:
+            targetEntity: Eccube\Entity\Product
+            joinColumn:
+                name: product_id
+                referencedColumnName: product_id
+                nullable: false
+                options:
+                  unsigned: true
+    lifecycleCallbacks: {  }

@@ -1,0 +1,8 @@
+name: ProductProfile
+code: ProductProfile
+version: 1.0.0
+event: ProductProfileEvent
+service:
+    - ProductProfileServiceProvider
+orm.path:
+    - /Resource/doctrine
